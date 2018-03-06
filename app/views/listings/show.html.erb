@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-6 col-lg-3">
+    <div class="img-thumbnail">
+      <%= image_tag @listing.image.url(:medium), class:"img-fluid, centre_img" %>
+    </div>
+  
+    <p class="star-rating" data-score= <%= @avg_rating %>></p>
+    <p><%= "#{@reviews.length} reviews" %></p>
+
+    <p><%= link_to "Write a Review", new_listing_review_path(@listing), class:"btn btn-primary" %></p>
+
+    <% if current_user = @listing.user %>
+      <%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-link"  %> |
+      <%= link_to 'Back', listings_path(@listing), class:"btn btn-link"  %>
+    <% end %>     
+  </div>
+  <div class="col-md-6 col-lg-9">
+    <h3><%= @listing.title %></h3>
+    <p>Artist: <%= @listing.artist %></p>
+    <p>Type: <%= @listing.version %></p>
+    <p>Description: <%= @listing.description %></p>
+    <p><%= number_to_currency(@listing.price, :locale => :ir) %></p>
+    <div class="centre">
+      <p><%= link_to "Add to Cart", '#', class:"btn btn-primary", data: { no_turbolink: true } %></p>
+    </div>
+      <% if @reviews.blank? %>
+        <h4>No reviews yet. Be the first to write one!</h4>
+      <% else %>     
+        <table class="table">
+          <tbody>
+            <% @reviews.each do | review | %>
+            <tr>
+              <td>
+                <div class="star-rating"  data-score= <%= review.ratings %>></div>
+                      <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>   
+              </td>           
+            </tr>
+            <%end%>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+</div>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>
