@@ -23,24 +23,33 @@
     <div class="centre">
       <p><%= link_to "Add to Cart", '#', class:"btn btn-primary", data: { no_turbolink: true } %></p>
     </div>
-      <% if @reviews.blank? %>
-        <h4>No reviews yet. Be the first to write one!</h4>
-      <% else %>     
-        <table class="table">
-          <tbody>
-            <% @reviews.each do | review | %>
-            <tr>
-              <td>
-                <div class="star-rating"  data-score= <%= review.ratings %>></div>
-                      <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>   
-              </td>           
-            </tr>
-            <%end%>
-          </tbody>
-        </table>
-      <% end %>
-    </div>
+
+
+    <table class="table">
+      <tbody>
+        <% @reviews.each do | review | %>  
+          <tr>
+            <td><h4><%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}."%></h4>
+              <p><%= review.created_at.strftime("%d/%m/%y") %></p>
+            </td>
+            <td>
+              <div class="star-rating" data-score= <%= review.rating %> ></div>
+              <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>   
+              
+              <% if user_signed_in? %>     
+                <% if (review.user == current_user) || (current_user.admin?) %>
+                  <%= link_to "Edit", edit_listing_review_path(@listing, review), class:"btn btn-link"  %> |
+                  <%= link_to "Delete", listing_review_path(@listing, review), class:"btn btn-link" , method: :delete %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
+
 
 <script>
   $('.star-rating').raty({

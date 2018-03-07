@@ -27,14 +27,13 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= "#{current_user.first_name} #{current_user.last_name}"%></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%= link_to "Purchase History", "purchases_path", class:"nav-link centre" %>
-                <%= link_to "Sales History", "sales_path", class:"nav-link centre" %>
                 <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link centre" %><%= link_to "Messages", "pages_contact_path", class:"nav-link centre" %>
                 <%= link_to "Sign Out", destroy_user_session_path, class:"nav-link centre", method: :delete %>
               </div>
           </li>
 
         <% else %>      
-          <li><%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %></li>
+          <li><%= link_to "New Profile", new_user_registration_path, class:"nav-link" %></li>
           <li><%= link_to "Sign In", new_user_session_path, class:"nav-link" %></li>
        <% end %> 
 
