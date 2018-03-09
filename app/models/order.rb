@@ -1,8 +1,7 @@
 class Order < ApplicationRecord
 	has_many :order_items
 	before_save :set_subtotal
-	
-	belongs_to :listing
+
 	belongs_to :buyer, class_name: "User"
 	belongs_to :seller, class_name: "User"
 
