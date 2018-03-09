@@ -14,8 +14,9 @@ class ListingsController < ApplicationController
   end
 
   # GET /listings/1
-  # GET /listings/1.json
   def show
+     @order_item = current_order.order_items.new
+     @listings = Listing.all
      @reviews = Review.where(listing_id: @listing.id).order("created_at DESC")
        if @reviews.blank?
         @avg_rating = 0
@@ -34,7 +35,6 @@ class ListingsController < ApplicationController
   end
 
   # POST /listings
-  # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
@@ -42,35 +42,28 @@ class ListingsController < ApplicationController
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
-        format.json { render :show, status: :created, location: @listing }
       else
         format.html { render :new }
-        format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /listings/1
-  # PATCH/PUT /listings/1.json
   def update
     respond_to do |format|
       if @listing.update(listing_params)
         format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
-        format.json { render :show, status: :ok, location: @listing }
       else
         format.html { render :edit }
-        format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /listings/1
-  # DELETE /listings/1.json
   def destroy
     @listing.destroy
     respond_to do |format|
       format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -91,3 +84,9 @@ class ListingsController < ApplicationController
       end
     end
 end
+
+
+
+
+
+ 

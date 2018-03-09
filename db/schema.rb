@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307161014) do
+ActiveRecord::Schema.define(version: 20180308141652) do
 
   create_table "listings", force: :cascade do |t|
     t.string "title"
@@ -25,6 +25,28 @@ ActiveRecord::Schema.define(version: 20180307161014) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.integer "user_id"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "listing_id"
+    t.integer "order_id"
+    t.decimal "unit_price"
+    t.integer "quantity"
+    t.decimal "total_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.decimal "subtotal"
+    t.decimal "total"
+    t.decimal "tax"
+    t.decimal "shipping"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "listing_id"
+    t.integer "buyer_id"
+    t.integer "seller_id"
   end
 
   create_table "reviews", force: :cascade do |t|

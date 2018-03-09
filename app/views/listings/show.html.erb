@@ -14,17 +14,26 @@
       <%= link_to 'Back', listings_path(@listing), class:"btn btn-link"  %>
     <% end %>     
   </div>
+
+
   <div class="col-md-6 col-lg-9">
     <h3><%= @listing.title %></h3>
     <p>Artist: <%= @listing.artist %></p>
     <p>Type: <%= @listing.version %></p>
     <p>Description: <%= @listing.description %></p>
-    <p><%= number_to_currency(@listing.price, :locale => :ir) %></p>
-    <div class="centre">
-      <p><%= link_to "Add to Cart", '#', class:"btn btn-primary", data: { no_turbolink: true } %></p>
-    </div>
 
 
+      <%= form_for(@order_item, :remote => true) do |f| %>
+        <%= f.hidden_field @listing_id, value: @listing.id %>
+        <p>Price: <%= number_to_currency(@listing.price, :locale => :ir) %></p>
+        <div class="form-group">
+          <p>Quantity: <%= f.number_field :quantity, value: 1, min: 1 %></p>
+        </div>
+        <p><%= f.submit "Add to cart", class: 'btn btn-primary' %></p>
+      <% end %>
+
+
+    <h3>Current Reviews</h3>
     <table class="table">
       <tbody>
         <% @reviews.each do | review | %>  
@@ -49,7 +58,7 @@
     </table>
   </div>
 </div>
-
+</div>
 
 <script>
   $('.star-rating').raty({
