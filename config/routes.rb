@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root 'listings#index'
   get 'home/about'
 
+  get 'shop' => "listings#shop"
   get 'seller' => "listings#seller"
   get 'buyer' => "listings#purchases"
   
