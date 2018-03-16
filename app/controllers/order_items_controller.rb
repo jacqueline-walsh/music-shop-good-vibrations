@@ -1,7 +1,7 @@
 class OrderItemsController < ApplicationController
 
 def create      
-  	@order = Order.new
+  	@order = current_order
   	@order.buyer_id = current_user.id
   	@order.seller_id = current_user.id
   	@order.order_items.build(order_item_params)       
