@@ -1,4 +1,4 @@
-<div class="centre"><h2>Your Purchase History</h2></div>
+<div class="centre"><h2>Your Last Purchase</h2></div>
 <table class="table table-bordered table-striped">
   <tr class="centre">
     <th>Image</th>
@@ -9,7 +9,7 @@
   </tr>
   <% @orders.each do |order| %>    
 	  <tr class="centre">
-	    <td><%= image_tag order.listing.image.url(:thumb) %></td>
+	    <td><%= image_tag order.listing_id.image.url(:thumb) %></td>
 	    <td><%= order.listing.name %></td>
 	    <td><%= number_to_currency(order.listing.price) %></td>
 	    <td><%= order.seller.name %></td>
@@ -18,6 +18,3 @@
   <% end %>
 </table>
 
-<% if user_signed_in? %>
-  <%= link_to 'New Listing', new_listing_path %>
-<% end %>

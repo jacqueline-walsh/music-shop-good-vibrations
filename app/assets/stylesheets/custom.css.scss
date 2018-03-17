@@ -6,6 +6,7 @@ body {
 
 .container {
   margin-top: 40px;
+  min-height:100%;
 }
 
 .navbar {
@@ -47,10 +48,8 @@ body {
 #footer {
   height: 75px;
   width: 100%;
-  margin-top: 20px;
   padding: 25px;
   background-color: #ede4d0;
-  overflow: hidden;
 }
 
 .centre {
@@ -65,7 +64,11 @@ body {
   margin-bottom: 20px;
 }
 
-.cart_btn {
+.custom_btn {
   margin-top: 40px;
   margin-bottom: 65px;
+}
+
+.category {
+  margin-bottom: 20px;
 }

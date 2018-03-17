@@ -3,7 +3,6 @@ class Order < ApplicationRecord
 	before_save :set_subtotal
 
 	belongs_to :buyer, class_name: "User"
-	belongs_to :seller, class_name: "User"
 
 	def subtotal
 		order_items.collect {|order_item| order_item.valid? ? (order_item.unit_price*order_item.quantity) : 0}.sum

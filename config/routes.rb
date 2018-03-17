@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users 
   resources :listings do
     resources :reviews, except: [:show, :index]  
-   
    end
      resources :order_items
 
@@ -14,8 +13,8 @@ Rails.application.routes.draw do
 
   get 'shop' => "listings#shop"
   get 'seller' => "listings#seller"
-  get 'buyer' => "listings#purchases"
-  
+  get 'buyer' => "order_items#purchases"
+
 
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 #root 'home#index'

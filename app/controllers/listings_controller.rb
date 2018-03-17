@@ -3,7 +3,11 @@ class ListingsController < ApplicationController
   before_action :authenticate_user!, only: [:seller, :new, :create, :edit, :update, :destroy]
 
   def seller
-    @listings = Listing.where(user: current_user).order("created_at DESC")
+    if current_user.admin?
+      @listings = Listing.all.order("created_at DESC")
+    else
+      @listings = Listing.where(user: current_user).order("created_at DESC")
+    end
   end
 
   # GET /listings
@@ -14,6 +18,7 @@ class ListingsController < ApplicationController
   # GET /listings
   def index
     @listings = Listing.limit(4).order("created_at DESC")   
+    @orders = Order.all.where(buyer: current_user).order("created_at DESC")    
   end
 
   # GET /listings/1

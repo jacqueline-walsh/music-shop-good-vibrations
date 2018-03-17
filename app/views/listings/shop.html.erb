@@ -1,3 +1,6 @@
+<div class="category">
+  Group by:  <%= select_tag 'version', "<option>all</option><option>vinyl</option><option>cd</option>".html_safe %>
+</div>
 <div class="centre">
   <div class="row">
     <% @listings.each do |listing| %>    
