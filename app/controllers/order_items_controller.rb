@@ -2,7 +2,7 @@ class OrderItemsController < ApplicationController
   before_action :authenticate_user! 
 
   def purchases
-    @orders = Order_items.all.where(buyer: current_user).order("created_at DESC")
+    @orders = @order.order_items.all.where(buyer: current_user).order("created_at DESC")
   end
 
   def create      
@@ -29,6 +29,6 @@ class OrderItemsController < ApplicationController
 
 private
   def order_item_params               
-     params.require(:order_item).permit(:listing_id, :quantity, :user_id)
+     params.require(:order_item).permit(:listing_id, :quantity, :seller_id)
   end
 end
