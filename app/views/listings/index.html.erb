@@ -6,7 +6,8 @@
   </div>
 </div>
 
-<p class="centre"><%= link_to "Shop Now", shop_path, class:"btn btn-danger btn-lg"  %></p>  
+<div class="centre"><%= render 'listings/purchase-history'%>
+  <%= link_to "Shop Now", shop_path, class:"btn btn-danger btn-lg"  %></div><br/>
 
 <%= render 'listings/mailchimp'%>
 <div class="centre">
@@ -27,4 +28,5 @@
     <% end %>
   </div>
 </div>
+
 
