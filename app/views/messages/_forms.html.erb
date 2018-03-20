@@ -1,0 +1,14 @@
+<%= form_for @message do |f| %>
+  	<div class="form-group">
+		<%= f.label "Message Title" %>
+		<%= f.text_field  :title, id: :message_title, class:"form-control" %>
+  	</div>
+    <div class="form-group">
+		<%= f.label "Description" %>
+		<%= f.text_field  :description, id: :message_description, class:"form-control" %>
+	</div>
+	<div class="actions" style="margin-bottom:190px">
+		<%= f.button :submit, class:"btn btn-primary" %>
+	</div>
+<% end %>
+

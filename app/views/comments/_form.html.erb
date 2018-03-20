@@ -1,0 +1,9 @@
+<%= form_for ([@message, @message.comments.build]) do |f| %>
+	<div class="form-group">
+		<%= f.label "Comment" %>
+		<%= f.text_field  :content, id: :comments_content, class:"form-control" %>
+	</div>
+  <div class="actions">	
+		<%= f.button :submit, class:"btn-custom"%>
+	</div>
+<%end%>

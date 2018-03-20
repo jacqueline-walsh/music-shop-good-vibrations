@@ -30,7 +30,7 @@ class CheckoutsController < ApplicationController
   charge = Stripe::Charge.create(
     :customer    => customer.id,
     :amount      => @amount,
-    :description => 'Rails Stripe customer',
+    :description => 'Good Vibrations Customer',
   )
 
   rescue Stripe::CardError => e

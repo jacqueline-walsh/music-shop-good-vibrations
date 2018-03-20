@@ -1,0 +1,13 @@
+<h1>Message Board</h1>
+
+<div class="row">
+<% @messages.each do |m| %>
+	<div class="col-md-4">
+		<div class="message">
+			<h2 class="message-title"><%= m.title %></h2>
+			<%= link_to 'view message', message_path(m), class:"btn-custom" %>
+		</div>
+	</div>
+<% end %>
+</div>
+<p><%= link_to 'New Message', new_message_path, class:"btn btn-link" %></p>
