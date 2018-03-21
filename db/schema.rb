@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20180308141652) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.integer "user_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -44,7 +43,6 @@ ActiveRecord::Schema.define(version: 20180308141652) do
     t.decimal "shipping"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "listing_id"
     t.integer "buyer_id"
     t.integer "seller_id"
   end
