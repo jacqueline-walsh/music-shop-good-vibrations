@@ -1,6 +1,8 @@
 <h1>Edit Comment</h1>
 
 <%= form_for ([@message, @comment]) do | f |%>
-	<%= f.text_field :content, label: "Comment" %>
-	<%= f.submit class:"btn btn-primary" %>
+  <div class="form-group">
+		<%= f.text_field :content, label: "Comment", class:"form-control" %>
+		<%= f.submit class:"btn btn-primary" %>
+	</div>
 <% end %>

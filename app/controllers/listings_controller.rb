@@ -7,14 +7,21 @@ class ListingsController < ApplicationController
     @orders = OrderItems.all.where(buyer_id: current_user).order("created_at DESC")
   end
 
-
+  def seller
+    if current_user.admin?
+      @listings = Listing.all.order("created_at DESC")
+    else
+      @listings = Listing.where(user: current_user).order("created_at DESC")
+    end
+  end
+  
   # GET /listings
   def shop
     if params[:category].blank?
       @listings = Listing.all.order("created_at DESC")
     else
-    #  @category_id = Category.find_by(name: params[:category]).id
-    #  @listings = Listing.where(:category_id => @category_id).order("created_by DESC")
+      @category_id = Category.find_by(name: params[:category]).id
+      @listings = Listing.where(:category_id => @category_id).order("created_by DESC")
     end
   end
 
