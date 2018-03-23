@@ -1,6 +1,25 @@
 <div class="category">
-  Group by:  <%= select_tag 'version', "<option>all</option><option>vinyl</option><option>cd</option>".html_safe %>
+      <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+          <li><%= link_to "Add New Item", new_listing_path, class:"btn-link" %></li>
+        <% end %>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories <span class="caret"></span></a>
+          <ul class="dropdown-menu  centre" role="menu">
+            <% Category.all.each do |category| %>
+              <li class="<%= 'active' if params[:category] == category.name %>">
+                <%= link_to category.name, shop_path(category: category.name), class:"btn-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </li> 
+      </ul>
 </div>
+<h1 class="current-category"><%= params[:category]%></h1>
+<%if @listings.count == 0 %>
+  <h1>There are no items currently available for this category</h1>
+<% end %>
 <div class="centre">
   <div class="row">
     <% @listings.each do |listing| %>    
@@ -10,7 +29,7 @@
           <div class="caption">
             <h3><%= listing.title %></h3>
             <p>Artist: <%= listing.artist %></p>
-            <p>Type: <%= listing.version %></p>   
+            <p>Type: <%= listing.category.name %></p>   
             <p><%= number_to_currency(listing.price, :locale => :ir) %></p>
             <p><%="Sold by: #{listing.user.first_name} #{listing.user.last_name}"%></p>
          </div>
@@ -20,6 +39,3 @@
   </div>
 </div>
 
-<% if user_signed_in? %>
-  <p><%= link_to 'New Listing', new_listing_path, class:"btn btn-primary" %></p>
-<% end %>

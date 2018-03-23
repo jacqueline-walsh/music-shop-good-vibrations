@@ -1,14 +1,18 @@
 class OrderItemsController < ApplicationController
   before_action :authenticate_user! 
 
+  def sales
+    @orders = OrderItem.all.where(seller_id: current_user).order("created_at DESC")
+  end
+
   def purchases
-    @order = Order.all.where(buyer_id: current_user).order("created_at DESC")
+    @orders = OrderItem.all.where(buyer_id: current_user).order("created_at DESC")
   end
 
   def create      
     @order = current_order
+    @order.order_items.build(order_item_params) 
     @order.buyer_id = current_user.id
-    @order.order_items.build(order_item_params)       
     @order.save       
     session[:order_id] = @order.id
   end
@@ -29,6 +33,6 @@ class OrderItemsController < ApplicationController
 
 private
   def order_item_params               
-     params.require(:order_item).permit(:listing_id, :quantity, :seller_id)
+     params.require(:order_item).permit(:listing_id, :quantity, :seller_id, :buyer_id)
   end
 end

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'shop' => "listings#shop"
   get 'seller' => "listings#seller"
   get 'buyer' => "order_items#purchases"
+  get 'sales' => "order_items#sales"  
   get 'checkout' => "checkouts#new"
 
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

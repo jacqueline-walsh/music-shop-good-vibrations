@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div class="centre"><%= render 'listings/purchase-history'%>
+<div class="centre"><%= render 'listings/purchases'%>
   <%= link_to "Shop Now", shop_path, class:"btn btn-danger btn-lg"  %></div><br/>
 
 <%= render 'listings/mailchimp'%>
@@ -19,7 +19,7 @@
           <div class="caption">
             <h3><%= listing.title %></h3>
             <p>Artist: <%= listing.artist %></p>
-            <p>Type: <%= listing.version %></p>   
+            <p>Type: <%= listing.category.name %></p>   
             <p><%= number_to_currency(listing.price, :locale => :ir) %></p>
             <p><%="Sold by: #{listing.user.first_name} #{listing.user.last_name}"%></p>
          </div>
@@ -29,4 +29,6 @@
   </div>
 </div>
 
-
+<% if user_signed_in? %>
+  <p><%= link_to 'New Listing', new_listing_path, class:"btn btn-primary" %></p>
+<% end %>

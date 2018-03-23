@@ -12,6 +12,7 @@
         </form> -->       
     </ul>
     <ul class="navbar-nav navbar-right">
+
         <li class="active cart"><%= render 'layouts/cart' %></li>
         <li><%= link_to image_tag('cart-logo.png'), cart_path, :alt => "cart-logo" %></li>
       
@@ -20,9 +21,8 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= "#{current_user.first_name} #{current_user.last_name}"%></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%= link_to "Manage Listings", seller_path, class:"nav-link centre" %>                
-                <%= link_to "Purchase History", buyer_path, class:"nav-link centre" %>
-                <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link centre" %>
                 <%= link_to "Messages", messages_path, class:"nav-link centre" %>
+                <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link centre" %>
                 <%= link_to "Sign Out", destroy_user_session_path, class:"nav-link centre", method: :delete %>
               </div>
           </li>

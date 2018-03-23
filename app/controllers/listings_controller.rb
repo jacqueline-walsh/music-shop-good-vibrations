@@ -1,22 +1,23 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:seller, :new, :create, :edit, :update, :destroy]
+  before_action :categories, only: [:shop, :edit, :new]
 
-  def purchases
-    @orders = Order.all.where(buyer_id: current_user).order("created_at DESC")
+  def _purchases
+    @orders = OrderItems.all.where(buyer_id: current_user).order("created_at DESC")
   end
-  def seller
-    if current_user.admin?
-      @listings = Listing.all.order("created_at DESC")
-    else
-      @listings = Listing.where(user: current_user).order("created_at DESC")
-    end
-  end
+
 
   # GET /listings
   def shop
-    @listings = Listing.all.order("created_at DESC")   
+    if params[:category].blank?
+      @listings = Listing.all.order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @listings = Listing.where(:category_id => @category_id).order("created_by DESC")
+    end
   end
+
 
   # GET /listings
   def index
@@ -49,6 +50,7 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
+    @listing.category_id = params[:category_id]
 
     respond_to do |format|
       if @listing.save
@@ -86,7 +88,11 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:title, :artist, :version, :description, :price, :image)
+      params.require(:listing).permit(:title, :artist, :version, :description, :price, :image, :category_id)
+    end
+
+    def categories
+      @categories = Category.all.map{ |c| [c.name, c.id]}
     end
 
 end
