@@ -14,7 +14,7 @@ class ListingsController < ApplicationController
       @listings = Listing.where(user: current_user).order("created_at DESC")
     end
   end
-  
+
   # GET /listings
   def shop
     if params[:category].blank?
@@ -24,7 +24,6 @@ class ListingsController < ApplicationController
       @listings = Listing.where(:category_id => @category_id).order("created_by DESC")
     end
   end
-
 
   # GET /listings
   def index

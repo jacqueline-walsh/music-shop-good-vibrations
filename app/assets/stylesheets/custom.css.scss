@@ -9,13 +9,16 @@ body {
   min-height:100%;
 }
 
-.social-media, .social-media-footer {
+.social-media {
   float: right;
+  padding-top: 20px;
   padding-right: 25px;
 }
 
-.social-media-footer {
-    margin-top: -5px;
+.copyright {
+  float: left;
+  padding-top: 20px;
+  padding-left: 25px;
 }
 
 .navbar {
@@ -45,6 +48,17 @@ body {
   color: #666;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: red;
+}
+
+a.nav-link.centre {
+  color: red !important;
+}
+
+a.nav-link.centre:hover {
+  color: rgba(0,0,0,.9) !important;
+}
 .jumbotron {
   background-color: #000 !important;
   max-height: 440px;
@@ -58,7 +72,6 @@ body {
 #footer {
   height: 75px;
   width: 100%;
-  padding: 25px;
   background-color: #ede4d0;
 }
 
@@ -81,6 +94,10 @@ body {
 
 .category {
   margin-bottom: 20px;
+}
+
+li.active.cart {
+    margin-top: 8px;
 }
 
 /******************************* message board *******************************************/

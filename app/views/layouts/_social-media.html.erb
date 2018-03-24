@@ -1,3 +1,18 @@
-<%= link_to image_tag('facebook-ft.png'), '#', :alt => "facebook" %>
-<%= link_to image_tag('twitter-ft.png'), '#', :alt => "twitter" %>
-<%= link_to image_tag('pinterest-ft.png'), '#', :alt => "pinterest" %>
+<span data-toggle="tooltip" data-placement="top" title="Facebook">
+	<%= link_to image_tag('facebook-ft.png'), 'https://www.facebook.com/good.vibrations.712', :alt => "facebook" %>
+</span>
+<span data-toggle="tooltip" data-placement="top" title="Twitter">
+	<%= link_to image_tag('twitter-ft.png'), 'https://twitter.com/GoodVibrationsD', :alt => "twitter" %>
+</span>
+<span data-toggle="tooltip" data-placement="top" title="Pinterest">
+	<%= link_to image_tag('pinterest-ft.png'), '#', :alt => "pinterest" %>
+</span>
+
+
+<script>
+
+	$(function () {
+  		$('[data-toggle="tooltip"]').tooltip()
+	});
+</script>
+
