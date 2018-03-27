@@ -1,4 +1,5 @@
 class CheckoutsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_checkout, only: [:show, :edit, :update, :destroy]
 
   # GET /checkouts/new
@@ -13,8 +14,7 @@ class CheckoutsController < ApplicationController
 
     respond_to do |format|
       if @checkout.save
-        format.html { redirect_to @checkout, notice: 'Checkout was successfully created.' }
-        format.json { render :show, status: :created, location: @checkout }
+        format.html { redirect_to thank_you_path, notice: 'Checkout was successfully created.' }
       else
         format.html { render :new }
       end

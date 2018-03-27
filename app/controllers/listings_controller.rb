@@ -3,9 +3,6 @@ class ListingsController < ApplicationController
   before_action :authenticate_user!, only: [:seller, :new, :create, :edit, :update, :destroy]
   before_action :categories, only: [:shop, :edit, :new]
 
-  def _purchases
-    @orders = OrderItems.all.where(buyer_id: current_user).order("created_at DESC")
-  end
 
   def seller
     if current_user.admin?
@@ -21,12 +18,13 @@ class ListingsController < ApplicationController
       @listings = Listing.all.order("created_at DESC")
     else
       @category_id = Category.find_by(name: params[:category]).id
-      @listings = Listing.where(:category_id => @category_id).order("created_by DESC")
-    end
+      @listings = Listing.where(:category_id => @category_id).order("created_at DESC")
+    end 
   end
 
   # GET /listings
   def index
+    @history = OrderItem.all.where(buyer_id: current_user).order("created_at DESC")
     @listings = Listing.limit(4).order("created_at DESC")   
     @orders = Order.all.where(buyer: current_user).order("created_at DESC")    
   end
@@ -40,8 +38,9 @@ class ListingsController < ApplicationController
         @avg_rating = 0
       else
         @avg_rating = @reviews.average(:rating).round(2)
-      end   
+      end 
   end
+ 
 
   # GET /listings/new
   def new
@@ -98,10 +97,10 @@ class ListingsController < ApplicationController
     end
 
     def categories
-      @categories = Category.all.map{ |c| [c.name, c.id]}
+      @categories = Category.all.map{ |c| [c.name, c.id] }
     end
-
 end
+
 
 
 

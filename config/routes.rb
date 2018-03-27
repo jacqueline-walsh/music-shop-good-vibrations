@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'buyer' => "order_items#purchases"
   get 'sales' => "order_items#sales"  
   get 'checkout' => "checkouts#new"
+  get 'checkout/thank-you' => "carts#thank_you"
 
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 #root 'home#index'

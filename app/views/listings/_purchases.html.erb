@@ -15,29 +15,30 @@
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
-	      <div class="modal-body">
-				<table class="table table-bordered table-striped">
-				  <tr class="centre">
-				    <th>Image</th>
-				    <th>Item</th>
-				    <th>Price</th>
-				    <th>Seller</th>
-				    <th>Date Purchased</th>   
-				    <th>Write a Review</th> 
-				  </tr>
 
-				  <% @orders.each do |order| %>    
-					  <tr class="centre">
-					    <td></td>
-					    <td></td>
-					    <td></td>
-					    <td></td>
-					    <td></td>
-					    <td></td>
-					  </tr>
-				  <% end %>
-				</table>
+
+	      <div class="modal-body">
+	      	<table class="table table-bordered">
+						<tr class="centre">
+							<thead class="thead-light">
+							  <th>Image</th>
+							  <th>Item</th>
+							  <th>Price</th>
+							</thead>
+						</tr>
+				
+						<% @history.each do |item| %>
+							<div class="row">
+							<tr class="centre">
+								<td><%= image_tag item.listing.image.url(:thumb) %></td>
+								<td style="padding-left: 20px;"><h3><%= item.listing.title %></h3>	
+								<td><%= number_to_currency(item.listing.price, :locale => :ir) %></td>
+							</tr>
+							</div>
+						<% end %>
+					</table>
 	      </div>
+
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 	      </div>

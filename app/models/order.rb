@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
 	has_many :order_items
 	before_save :set_subtotal
+	has_one :checkout
 
 	belongs_to :buyer, class_name: "User"
 
