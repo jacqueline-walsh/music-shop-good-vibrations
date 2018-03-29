@@ -1,14 +1,6 @@
 class OrderItemsController < ApplicationController
   before_action :authenticate_user! 
 
-  def sales
-    @orders = OrderItem.all.where(seller_id: current_user).order("created_at DESC")
-  end
-
-  def purchases
-    @orders = OrderItem.all.where(buyer_id: current_user).order("created_at DESC")
-  end
-
   def create      
     @order = current_order
     @order.order_items.build(order_item_params) 

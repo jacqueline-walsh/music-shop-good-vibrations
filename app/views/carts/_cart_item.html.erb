@@ -32,17 +32,33 @@
 								<%= f.submit "Update Quantity", class: 'btn btn-primary' %>
 								<%= link_to "Delete", item, method: :delete, remote: true, class: 'btn btn-danger'  %>
 							</div>
-								<span>Total Price: <%= number_to_currency(item.total_price, :locale => :ir) %></span>
 							</div>
 						<% end %>
 					</div>
 				</div>
 			</div><br/>	
 	<% end %>
-<% end %>  
+<% end %> 
+<%= form_tag cart_path do %>
+  <article>
+    <label class="amount">
+      <span><strong>Total Amount: <%= number_to_currency(current_order.subtotal, :locale => :ir) %></strong></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-description="Total Payment"
+    data-amount="@amount"
+	  data-billingAddress="true"
+    data-shippingAddress="true">
+	  
+  </script>
+  
+<% end %> 
+<br/> 
 <div class="custom_btn">
 	<%= link_to 'Continue Shopping', shop_path, class:"btn btn-primary" %>
-	<%= link_to 'Checkout', new_checkout_path, class:"btn btn-primary" %>
 </div>
 
 </div>

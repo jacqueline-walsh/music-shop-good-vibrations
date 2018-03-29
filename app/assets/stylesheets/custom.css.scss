@@ -175,13 +175,15 @@ li.active.cart {
 
 .message {
   box-sizing: border-box;
-  background-color: #383838;
+  background-image: url('https://i1.wp.com/trippybackgrounds.co/wp-content/uploads/2017/09/trippy-wallpaper.jpg');
+  background-size: contain;
+  /*background-color: #383838; */
   margin-bottom: 25px;
   margin-right: 10px;
   margin-left: 10px;
   padding: 1.4em 1.4em;
-  height: 150px;
-  border-bottom: 4px solid #ff0000;
+  height: 200px;
+  border-bottom: 5px solid #ff0000;
   border-radius: 10px;
 
   .message-title {
@@ -189,12 +191,19 @@ li.active.cart {
     margin-top: 0;
     color: white;
     margin-bottom: 25px;
+    font-weight: bold;
   }
-
+}
   .btn-custom {
-    margin-top: 20px;
+	  margin-top: 25px;
+	  color: red;
+	  padding: 5px;
+	  border: 1px solid red;
   }
 
+
+  .btn-custom:hover {
+	  color: #666;
 }
 
 .message:nth-child(4n) {

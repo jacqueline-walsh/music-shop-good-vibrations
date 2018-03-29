@@ -1,0 +1,49 @@
+0000000000000000000000000000000000000000 8a6adac1d4caf46e1fb7b85d149a45bf43145996 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1520362107 +0000	commit (initial): Initial upload
+8a6adac1d4caf46e1fb7b85d149a45bf43145996 9d17ec384ff327806b2ff13c85784fb8b5ebf18d jacqueline-walsh <jacqueline.walsh34@gmail.com> 1520436450 +0000	commit: Added user permissions and star rating
+9d17ec384ff327806b2ff13c85784fb8b5ebf18d 84cdec04df86aff6271581e0e7a32cbf38fba0ba jacqueline-walsh <jacqueline.walsh34@gmail.com> 1520442362 +0000	commit: addresses added to profile
+84cdec04df86aff6271581e0e7a32cbf38fba0ba 089182e458b4c513a7061c696ff747362ce50a57 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1520443540 +0000	commit: favicons added for little extra
+089182e458b4c513a7061c696ff747362ce50a57 3e8161febcb3a5bce47dbd18258b8b8f37ecbc26 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1520591465 +0000	commit: add shopping cart
+3e8161febcb3a5bce47dbd18258b8b8f37ecbc26 38be61f92ec5b43a46bb343eaf09596fafb26af3 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1520612120 +0000	commit: updates to cart:
+38be61f92ec5b43a46bb343eaf09596fafb26af3 d61ed04bbce8ca70a3bdb771d66bbe8196597788 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1520625347 +0000	commit: more bug fixes to cart
+d61ed04bbce8ca70a3bdb771d66bbe8196597788 d61ed04bbce8ca70a3bdb771d66bbe8196597788 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1520687363 +0000	checkout: moving from master to j-new-listing-error
+d61ed04bbce8ca70a3bdb771d66bbe8196597788 21c57ee444d6efe601b5b76ff29c26eec23ec265 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521133235 +0000	commit: Heroku config
+21c57ee444d6efe601b5b76ff29c26eec23ec265 1e8c91a01d80762c037aae55668d00a79d201644 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521135196 +0000	commit: Heroku config
+1e8c91a01d80762c037aae55668d00a79d201644 fdf66b27a12d8fa2150b914754c03c967f79e1b0 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521135567 +0000	commit: Heroku config
+fdf66b27a12d8fa2150b914754c03c967f79e1b0 fab1cbf93c318d34f183e5f4d8bacb2d82200e3a jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521135743 +0000	commit: Heroku config
+fab1cbf93c318d34f183e5f4d8bacb2d82200e3a cd29fe27faa3f8ce316892719f1320d0484f88b2 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521193257 +0000	commit: fix cart and add shop
+cd29fe27faa3f8ce316892719f1320d0484f88b2 d61ed04bbce8ca70a3bdb771d66bbe8196597788 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521197746 +0000	checkout: moving from j-new-listing-error to master
+d61ed04bbce8ca70a3bdb771d66bbe8196597788 8d1cdc2aa351345689b167d6052da05ea4d7d5c1 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521198585 +0000	commit: fix cart and add shop
+8d1cdc2aa351345689b167d6052da05ea4d7d5c1 a25aa35a80bc328234d50462af6f62d3d094cf92 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521199672 +0000	commit: add buttons to cart
+a25aa35a80bc328234d50462af6f62d3d094cf92 2718f1d19eb3860d759fe103e7aa837622537e90 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521201012 +0000	commit: update gem file
+2718f1d19eb3860d759fe103e7aa837622537e90 d8276a72f82b767a8d96cfa060beb5d94b3f3e25 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521201119 +0000	commit: update gem file
+d8276a72f82b767a8d96cfa060beb5d94b3f3e25 7680724c98194e3a991bca7724922a10fedd0a98 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521201203 +0000	commit: update gem file
+7680724c98194e3a991bca7724922a10fedd0a98 39bf42c2fd5a9941eb33af2f029fc72a7bcbd9b4 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521205579 +0000	commit: fix review permissions bug
+39bf42c2fd5a9941eb33af2f029fc72a7bcbd9b4 78692459c1e8036cc58400f1573bf8c1af2ea5b6 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521206441 +0000	commit: add back button to listing page
+78692459c1e8036cc58400f1573bf8c1af2ea5b6 721a04fa5868c395dc93b74be66b7e38beadf1d4 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521294636 +0000	commit: start on purchase history page
+721a04fa5868c395dc93b74be66b7e38beadf1d4 7defd3a3a42180c8ee29c37ec18c20c0ff1fa4f1 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521386134 +0000	commit: add checkout few bugs still to squish
+7defd3a3a42180c8ee29c37ec18c20c0ff1fa4f1 951d0bf607c075962b35939b292abe88c07048a6 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521397941 +0000	commit: add version to pg gem
+951d0bf607c075962b35939b292abe88c07048a6 4daefaac69c622fbea26538e376266c9e0840b5b jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521398421 +0000	commit: changes to gem file
+4daefaac69c622fbea26538e376266c9e0840b5b 07c433d5a1ac639be1eb910fd0cc15446fc48003 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521547591 +0000	commit: add message board
+07c433d5a1ac639be1eb910fd0cc15446fc48003 3f79247cc74a3b84a8640a069f61c58d9985c78d jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521557610 +0000	commit: start puchase order modal
+3f79247cc74a3b84a8640a069f61c58d9985c78d a2913035a4aefdc9a1e73f9b8f1c03bf10192db7 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521798669 +0000	commit: add comments
+a2913035a4aefdc9a1e73f9b8f1c03bf10192db7 7a726e573282bf95b3fea76fb456550c2dc5139e jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521800782 +0000	commit: amend message edit form
+7a726e573282bf95b3fea76fb456550c2dc5139e 2cfe365cf70507d0f04f279e9933a274a58039c8 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521802223 +0000	commit: fix manage listings and message edit form
+2cfe365cf70507d0f04f279e9933a274a58039c8 76390dc5218b82e97e917e1f2ae58243595b3556 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521802383 +0000	commit: change color or message description
+76390dc5218b82e97e917e1f2ae58243595b3556 145eb395e32289e0b3fd696754dde6ae64000e9b jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521812636 +0000	commit: add social media and change color of comments
+145eb395e32289e0b3fd696754dde6ae64000e9b 145eb395e32289e0b3fd696754dde6ae64000e9b jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521826145 +0000	checkout: moving from master to categories
+145eb395e32289e0b3fd696754dde6ae64000e9b c9bebcfb476120dbbfd6e21a0b40fdd1ee3919fc jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521826198 +0000	commit: to fix categories bug
+c9bebcfb476120dbbfd6e21a0b40fdd1ee3919fc 5c3f452e959c9ef8969b8a3fc50dd99858c2da41 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521849324 +0000	commit: navbar changes
+5c3f452e959c9ef8969b8a3fc50dd99858c2da41 145eb395e32289e0b3fd696754dde6ae64000e9b jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521849331 +0000	checkout: moving from categories to master
+145eb395e32289e0b3fd696754dde6ae64000e9b 5c3f452e959c9ef8969b8a3fc50dd99858c2da41 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521849511 +0000	checkout: moving from master to categories
+5c3f452e959c9ef8969b8a3fc50dd99858c2da41 5c3f452e959c9ef8969b8a3fc50dd99858c2da41 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521849693 +0000	checkout: moving from categories to categories
+5c3f452e959c9ef8969b8a3fc50dd99858c2da41 145eb395e32289e0b3fd696754dde6ae64000e9b jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521849706 +0000	checkout: moving from categories to master
+145eb395e32289e0b3fd696754dde6ae64000e9b 5c3f452e959c9ef8969b8a3fc50dd99858c2da41 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521849789 +0000	checkout: moving from master to categories
+5c3f452e959c9ef8969b8a3fc50dd99858c2da41 145eb395e32289e0b3fd696754dde6ae64000e9b jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521849904 +0000	checkout: moving from categories to master
+145eb395e32289e0b3fd696754dde6ae64000e9b 5c3f452e959c9ef8969b8a3fc50dd99858c2da41 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521849915 +0000	checkout: moving from master to categories
+5c3f452e959c9ef8969b8a3fc50dd99858c2da41 389b9dccc78b822e2e00fdc5ece90da5b281fa3a jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521896841 +0000	commit: change to gem file
+389b9dccc78b822e2e00fdc5ece90da5b281fa3a 145eb395e32289e0b3fd696754dde6ae64000e9b jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521896913 +0000	checkout: moving from categories to master
+145eb395e32289e0b3fd696754dde6ae64000e9b 389b9dccc78b822e2e00fdc5ece90da5b281fa3a jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521896950 +0000	merge categories: Fast-forward
+389b9dccc78b822e2e00fdc5ece90da5b281fa3a 1267e66e17c7b13370f9a2055d20029eaf937632 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521897031 +0000	commit (merge): save master
+1267e66e17c7b13370f9a2055d20029eaf937632 1267e66e17c7b13370f9a2055d20029eaf937632 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521897821 +0000	checkout: moving from master to heroku-error-db
+1267e66e17c7b13370f9a2055d20029eaf937632 1267e66e17c7b13370f9a2055d20029eaf937632 jacqueline-walsh <jacqueline.walsh34@gmail.com> 1521900356 +0000	checkout: moving from heroku-error-db to master
+1267e66e17c7b13370f9a2055d20029eaf937632 65da67d5976ccd1867bfa748a0078e9541d0ec1b jacqueline-walsh <jacqueline.walsh34@gmail.com> 1522159337 +0100	commit: fix category and purchase history bugs

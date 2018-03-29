@@ -1,11 +1,10 @@
 <h1>Message Board</h1>
-
 <div class="row">
 <% @messages.each do |m| %>
-	<div class="col-md-4">
+	<div class="col-lg-4 col-md-6">
 		<div class="message">
 			<h2 class="message-title"><%= m.title %></h2>
-			<%= link_to 'view message', message_path(m), class:"btn-custom" %>
+			<%= link_to 'view message', message_path(m), class:"btn-custom float-right" %>
 		</div>
 	</div>
 <% end %>
