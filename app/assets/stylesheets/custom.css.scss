@@ -87,6 +87,15 @@ a.nav-link.centre:hover {
   margin-bottom: 20px;
 }
 
+.img-thumbnail a.img-fluid img {
+    width: 200px;
+    border: 1px solid #ccc;
+}
+
+.manage-img {
+    width: 100px;
+}
+
 .custom_btn {
   margin-top: 40px;
   margin-bottom: 65px;
@@ -281,14 +290,13 @@ li.active.cart {
 
 .flip-container, .front, .back {
 	width: 255px;
-	height: 420px;
+	height: 411px;
 }
 
 /* flip speed goes here */
 .flipper {
 	transition: 0.6s;
 	transform-style: preserve-3d;
-
 	position: relative;
 }
 
@@ -314,4 +322,5 @@ li.active.cart {
 	background-color: #fff;
 	padding: 10px;
 	font-size: .90em;
+	
 }
