@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:seller, :new, :create, :edit, :update, :destroy]
-  before_action :categories, only: [:shop, :edit, :new]
+  before_action :categories, only: [:shop, :edit, :new, :create]
 
 
   def seller
@@ -41,7 +41,6 @@ class ListingsController < ApplicationController
       end 
   end
  
-
   # GET /listings/new
   def new
     @listing = Listing.new

@@ -25,6 +25,7 @@
         <%= form_for(@order_item, remote: true) do |f| %>
         <%= f.hidden_field :listing_id, value: @listing.id %>
         <%= f.hidden_field :seller_id, value: @listing.user_id %>
+        <%= f.hidden_field :buyer_id, value: current_user.id %>        
         <p>Price: <%= number_to_currency(@listing.price, :locale => :ir) %></p>
         <div class="form-group">
           <p>Quantity: <%= f.number_field :quantity, value: 1, min: 1 %></p>

@@ -24,7 +24,9 @@ class CartsController < ApplicationController
 	    redirect_to new_checkouts_path
 	  end    
 
-
+	def show
+	end
+	
 	private
 
 	def get_items

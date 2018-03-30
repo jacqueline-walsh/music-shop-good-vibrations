@@ -28,3 +28,4 @@ private
      params.require(:order_item).permit(:listing_id, :quantity, :seller_id, :buyer_id)
   end
 end
+
