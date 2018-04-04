@@ -1,24 +1,13 @@
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="centre">Where Good Vibes Play...</h1>
-    <div class="banner-img centre"><%= image_tag 'banner.gif', class:"img-fluid"%></div>
-  </div>
+<div class="jumbotron jumbotron-fluid shadow">
 </div>
 
 <div class="centre"><%= render 'listings/purchases'%>
   <%= link_to "Shop Now", shop_path, class:"btn btn-danger btn-lg"  %></div><br/>
 
 <%= render 'listings/mailchimp'%>
-
-
-
+<br>
 			<!-- front content -->
-
-
-
-
-
  <div class="centre">
   <div class="row">
     <% @listings.each do |listing| %>    
@@ -42,7 +31,9 @@
   					
 						<div class="back centre">
 							<h3>Description</h3>
+							<span style="center">*****</span>
 							<p><%= listing.description %></p>
+							<span style="center">*****</span>
 						</div>
 						
 					</div>  <!-- end flipper -->

@@ -10,16 +10,15 @@
 <% if @order_items.size>0 %>
 	<% @order_items.each do |item| %>
 			<div class="row">
-				<div class="col-sm-8">
-					<table>
-						<tr>
-							<td><%= image_tag item.listing.image.url(:medium), class:"cart-img" %></td>
-							<td style="padding-left: 20px;"><h3><%= item.listing.title %></h3>			
-							<%= item.listing.description %></td>
-						</tr>
-					</table>
+				<div class="col-md-2">
+					
+							<%= image_tag item.listing.image.url(:medium), class:"cart-img img-fluid" %></td>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-md-7" style="padding-left: 20px;">
+					<h3><%= item.listing.title %></h3>		
+					<%= item.listing.description %>
+				</div>
+				<div class="col-md-3">
 					<div class="pull-right">
 						<%= form_for(item, remote: true) do |f| %>
 						<%= f.hidden_field :listing_id, value: item.listing.id %>
