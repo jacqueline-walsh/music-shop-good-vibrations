@@ -65,12 +65,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   #added by br as per devise install instructions 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  
-config.paperclip_defaults = {
-  :storage => :s3,
-  :bucket => 'good-vibrations'
-}  
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }  
 end
 
 
