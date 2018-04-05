@@ -227,7 +227,7 @@ li.active.cart {
 
 .message {
   box-sizing: border-box;
-  background-image: url('images/message-board.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/good-vibrations/images/message-board.jpg');
   background-size: cover;
   margin-bottom: 25px;
   margin-right: 10px;
@@ -265,7 +265,7 @@ li.active.cart {
 
 .message-show {
   box-sizing: border-box;
-  background-image: url('/assets/message-content.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/good-vibrations/images/message-content.jpg');
   background-size: cover;
   background-position-x: right; 
   box-shadow: 4px 4px 5px #888;
