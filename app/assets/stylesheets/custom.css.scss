@@ -27,7 +27,7 @@ body {
 }
 
 .navbar-brand {
-  color: #faed5b !important;
+  color: #fcf17d !important;
   font-size: 2.3em !important;
   font-weight: bold;
   font-family: 'Monoton', cursive;
@@ -61,7 +61,8 @@ a.nav-link.centre:hover {
 
 .jumbotron {
   background-color: #000 !important;
-  background-image: url('/assets/jumbotron.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/good-vibrations/images/jumbotron.jpg
+');
 	background-size: cover;
 	height: 470px;
 }
@@ -226,7 +227,7 @@ li.active.cart {
 
 .message {
   box-sizing: border-box;
-  background-image: url('/assets/message-board.jpg');
+  background-image: url('images/message-board.jpg');
   background-size: cover;
   margin-bottom: 25px;
   margin-right: 10px;

@@ -66,4 +66,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'searchkick'
 gem "paperclip", "~> 5.2.1"
+gem 'aws-sdk-s3'
 gem 'stripe'
