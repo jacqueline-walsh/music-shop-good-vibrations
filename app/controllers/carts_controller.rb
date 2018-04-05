@@ -6,7 +6,7 @@ class CartsController < ApplicationController
   # POST /checkouts
   def create
 
-	  @amount = number_to_currency(current_order.subtotal, :locale => :ir)
+	  @amount = current_order.subtotal
 	
 	  customer = Stripe::Customer.create(
 	    :email => params[:stripeEmail],
@@ -16,12 +16,12 @@ class CartsController < ApplicationController
 	  charge = Stripe::Charge.create(
 	    :customer    => customer.id,
 	    :amount      => @amount,
-	    :description => 'Good Vibrations Customer',
+	    :description => 'Good Vibrations Customer'
 	  )
 	
 	  rescue Stripe::CardError => e
 	    flash[:error] = e.message
-	    redirect_to new_checkouts_path
+	    redirect_to cart_thank_you_path
 	  end    
 
 	def show

@@ -1,0 +1,27 @@
+<h3>Your below order has been placed and will be shipped to you within the next 3 to 4 working days: </h3><br/><br/>
+<h3>Total Price: <%= number_to_currency(current_order.subtotal, :locale => :ir) %></h3>
+
+	<table class="table table-bordered">
+		<tr class="centre">
+			<thead class="thead-light">
+			  <th>Image</th>
+			  <th>Item</th>
+			  <th>Price</th>
+			</thead>
+		</tr>
+	
+			<% @order_items.each do |item| %>
+				<div class="row">
+				<tr class="centre">
+			<td><%= image_tag item.listing.image.url(:thumb) %></td>
+			<td style="padding-left: 20px;"><h3><%= item.listing.title %></h3>	
+			<td><%= number_to_currency(item.listing.price, :locale => :ir) %></td>
+							</tr>
+							</div>
+						<% end %>
+					</table>
+	      </div>
+
+
+
+

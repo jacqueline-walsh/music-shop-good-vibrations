@@ -5,7 +5,7 @@ Rails.application.routes.draw do
    end
 
   resources :order_items
-  resource :cart, only: [:show] 
+  resource :cart, only: [:show, :thank_you] 
 
   resources :messages do
     resources :comments
@@ -15,5 +15,6 @@ Rails.application.routes.draw do
 
   get 'shop' => "listings#shop"
   get 'seller' => "listings#seller"
+  post 'cart/thank-you' => "carts#thank_you"
 
 end
