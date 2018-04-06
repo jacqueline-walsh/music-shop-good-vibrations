@@ -60,11 +60,9 @@ a.nav-link.centre:hover {
 }
 
 .jumbotron {
-  background-color: #000 !important;
-  background-image: url('https://s3-eu-west-1.amazonaws.com/good-vibrations/images/jumbotron.jpg
-');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/good-vibrations/images/jumbotron.jpg');
 	background-size: cover;
-	height: 470px;
+	min-height: 470px;
 }
 
 .shadow
