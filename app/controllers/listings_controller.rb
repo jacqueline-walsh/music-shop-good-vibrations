@@ -84,6 +84,15 @@ class ListingsController < ApplicationController
     end
   end
 
+def search
+  #@search_term = params[:q]
+  st = "%#{params[:q]}%"
+  @listings = Listing.where("title like ?", st)
+end
+
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing

@@ -67,10 +67,7 @@ Rails.application.configure do
   #added by br as per devise install instructions 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
-config.paperclip_defaults = {
-  :storage => :s3,
-  :bucket => 'good-vibrations'
-}  
+
 end
 
 

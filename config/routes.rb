@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :comments
   end
   
+   post '/search' => 'listings#search'  #added for search
+  
   root 'listings#index'
 
   get 'shop' => "listings#shop"
