@@ -5,12 +5,15 @@ Rails.application.routes.draw do
     resources :reviews, except: [:show, :index]  
    end
 
+
   resources :order_items
   resource :cart, only: [:show] 
 
   resources :messages do
     resources :comments
   end
+  
+  post '/search' => 'listings#search'  #added for search
   
   root 'listings#index'
 
@@ -22,5 +25,8 @@ Rails.application.routes.draw do
 
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 #root 'home#index'
+
+
+
 
 end

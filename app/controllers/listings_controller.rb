@@ -28,6 +28,8 @@ class ListingsController < ApplicationController
 
   # GET /listings
   def index
+    #@search = Listings.search(params[:q])  ##added by Gary 
+    #@listings = @search.result  ##added by Gary 
     @listings = Listing.limit(4).order("created_at DESC")   
     @orders = Order.all.where(buyer: current_user).order("created_at DESC")    
   end
@@ -86,6 +88,15 @@ class ListingsController < ApplicationController
       format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
     end
   end
+  
+def search
+  #@search_term = params[:q]
+  st = "%#{params[:q]}%"
+  @listings = Listing.where("title like ?", st)
+end
+  
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -101,6 +112,10 @@ class ListingsController < ApplicationController
     def categories
       @categories = Category.all.map{ |c| [c.name, c.id]}
     end
+
+ 
+
+
 
 end
 
