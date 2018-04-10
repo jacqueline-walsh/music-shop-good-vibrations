@@ -9,7 +9,7 @@
 
     <p><%= link_to "Write a Review", new_listing_review_path(@listing), class:"btn btn-primary" %></p>
 
-    <% if current_user == @listing.user  %>
+    <% if (current_user == @listing.user)   || (current_user.admin?) %>
       <%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-link"  %> |
     <% end %>   
     <%= link_to 'Back', shop_path, class:"btn btn-link"  %>

@@ -1,3 +1,4 @@
+
 <table class="table table-bordered table-striped">
   <tr class="centre">
     <th>Image</th>
@@ -7,23 +8,22 @@
     <th>Action</th>    
   </tr>
   <% @listings.each do |listing| %>    
-  <tr>
-    <td><%= image_tag listing.image.url(:thumb), class:"manage-img" %></td>
-    <td><%="#{listing.user.first_name} #{listing.user.last_name}"%></td>
-    <td><%= listing.description %></td>
-    <td><%= number_to_currency(listing.price, :locale => :ir) %></td>
-    <td>
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-      <div class="dropdown-menu centre">
-        <%= link_to "View", listing, class:"centre" %><br/>
-        <%= link_to "Edit", edit_listing_path(listing), class:"centre" %><br/>
-        <%= link_to "Destroy", listing, class:"centre", method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
-    </td>
-  </tr>
+	  <tr>
+	    <td><%= image_tag listing.image.url(:thumb), class:"manage-img" %></td>
+	    <td><%="#{listing.user.first_name} #{listing.user.last_name}"%></td>
+	    <td><%= listing.description %></td>
+	    <td><%= number_to_currency(listing.price, :locale => :ir) %></td>
+	    <td>
+	      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+	      <div class="dropdown-menu centre">
+	        <%= link_to "View", listing, class:"centre" %><br/>
+	        <%= link_to "Edit", edit_listing_path(listing), class:"centre" %><br/>
+	        <%= link_to "Destroy", listing, class:"centre", method: :delete, data: { confirm: 'Are you sure?' } %>
+	      </div>
+	    </td>
+	  </tr>
   <% end %>
 </table>
-
 
 <% if user_signed_in? %>
   <%= link_to 'New Listing', new_listing_path, class:"btn btn-primary custom_btn" %>
