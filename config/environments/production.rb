@@ -102,4 +102,10 @@ Rails.application.configure do
   
   #line below added by Barry 270218 as per devise instructions - commented until we have host address
   #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+config.paperclip_defaults = {
+  :storage => :s3,
+  :preserve_files => true,
+  :bucket => 'good-vibrations'
+}
 end

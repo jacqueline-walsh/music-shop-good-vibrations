@@ -67,3 +67,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "paperclip", "~> 5.2.1"
 gem 'stripe'
 gem 'figaro'
+gem 'aws-sdk', '~> 2'
