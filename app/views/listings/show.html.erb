@@ -7,11 +7,14 @@
     <p class="star-rating" data-score= <%= @avg_rating %>></p>
     <p><%= "#{@reviews.length} reviews" %></p>
 
+    <% if user_signed_in? %>     
+    <% if (@listing.user == current_user) || (current_user.admin?) %>    
+
     <p><%= link_to "Write a Review", new_listing_review_path(@listing), class:"btn btn-primary" %></p>
 
-    <% if (current_user == @listing.user) || (current_user.admin?) %>
       <%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-link"  %> |
-    <% end %>   
+    <% end %>  
+    <% end %>
     <%= link_to 'Back', shop_path, class:"btn btn-link"  %>
 
   </div>
@@ -25,7 +28,7 @@
         <%= form_for(@order_item, remote: true) do |f| %>
         <%= f.hidden_field :listing_id, value: @listing.id %>
         <%= f.hidden_field :seller_id, value: @listing.user_id %>
-        <%= f.hidden_field :buyer_id, value: current_user.id %>        
+        <%= f.hidden_field :buyer_id, value: current_user %>        
         <p>Price: <%= number_to_currency(@listing.price, :locale => :ir) %></p>
         <div class="form-group">
           <p>Quantity: <%= f.number_field :quantity, value: 1, min: 1 %></p>
